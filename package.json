@@ -6,8 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " node server.js",
-    "build": " node server.js ",
+    "start": " CI= npm run start",
+    "build": " CI= npm run build",
     "dev": "nodemon server.js"
   },
   "keywords": [],
