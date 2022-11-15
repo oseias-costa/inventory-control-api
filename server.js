@@ -3,6 +3,13 @@ require('dotenv').config()
 const workoutRoutes = require('./routes/workouts')
 const mongoose = require('mongoose')
 const serverless = require('serverless-http')
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
 
 //express app
 const app = express()
@@ -16,6 +23,7 @@ app.use((req, res, next) => {
 })
 
 app.use(express.json())
+app.use(cors(corsOptions)) // Use this after the variable declaration
 
 // app.use('/.netlify/functions', workoutRoutes)
 // routes
